@@ -12,10 +12,10 @@ import astro from '../assets/about-astro.png'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['lorem', 'ipsum']
-const frontend = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
-const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
-const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
+const languages = ['C/C++', 'Python', 'Swift','Javascript','Typescript','PHP', 'Ino',]
+const frontend = ['Vue.js', 'Astro.js']
+const backend = ['Nest.js', 'Node.js', 'Laravel', 'Django']
+const others = ['ESP-IDF', 'Arduino']
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -33,7 +33,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			/>
 
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>Lorem ipsum dolor</h1>
+        <h1 class='text-3xl font-bold'>Hey, I'm Mustafa Yousif</h1>
 				<a
 					href='https://github.com/srleom/astro-theme-resume.git'
 					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
@@ -45,10 +45,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 						<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
 					</span>
 
-					<p class='font-medium'>Get free template</p>
+					<p class='font-medium'>Get in contact</p>
 				</a>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Lorem Ipsum'>
+					<Label title='Pogo Labs'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -56,7 +56,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 							></path></svg
 						>
 					</Label>
-					<Label title='Ipsum'>
+					<Label title='Malaysia'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -67,7 +67,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<Label
 						title='Connect on Linkedin'
 						as='a'
-						href='https://www.linkedin.com/in/example/'
+						href='https://www.linkedin.com/in/mustafa-yousif-694080193/'
 						target='_blank'
 					>
 						<svg
@@ -86,12 +86,16 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		</section>
 
 		<Section title='About'>
-			<p class='text-muted-foreground'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis
-				consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum
-				odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet
-				consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
-			</p>
+			<p class='text-muted-foreground'>Passionate about integrating AI into robotics and exploring innovative applications of computer vision for everyday challenges. Experienced in developing scalable IoT systems across diverse domains. My expertise lies in bridging the gap between hardware and software in robotic systems, with a focus on implementing intelligent algorithms for enhanced functionality and autonomy.
+Current research interests:
+
+AI-powered robotic systems
+Real-world applications of computer vision
+Edge computing for IoT devices
+SLAM (Simultaneous Localization and Mapping) techniques
+Collaborative multi-agent robotic systems
+
+Constantly seeking new opportunities to push the boundaries of robotics and AI integration. Open to collaboration and always eager to discuss cutting-edge developments in the field.</p>
 		</Section>
 		{
 			allPostsByDate.length > 0 && (
@@ -225,6 +229,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
 		</span>
 
-		<p class='font-medium'>Get free template</p>
+		<p class='font-medium'>Get in contact</p>
 	</a>
 </PageLayout>
