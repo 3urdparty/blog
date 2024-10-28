@@ -13,7 +13,7 @@ import icon from 'astro-icon'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://3urdparty.github.io',
-  base: 'blog',
+  base: process.env.BASE,
   integrations: [
     expressiveCode(expressiveCodeOptions),
     tailwind({
