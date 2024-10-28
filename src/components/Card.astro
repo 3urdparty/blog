@@ -35,7 +35,7 @@ if (imagePath) {
 			<Image
 				src={images[imagePath]()}
 				alt={altText}
-				class={cn('mb-3 md:absolute md:mb-0', imageClass)}
+				class={cn('mb-3 md:absolute md:mb-0 rounded-full overflow-clip bg-slate-800 p-1 border border-slate-200 shadow dark:border-slate-700', imageClass)}
 				loading='eager'
 			/>
 		)

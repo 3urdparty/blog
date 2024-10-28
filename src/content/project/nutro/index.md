@@ -152,9 +152,9 @@ Right aligned columns
 
 ## Images
 
-Image in the same folder: `src/content/post/markdown-elements/logo.png`
+Image in the same folder: `src/content/post/markdown-elements/nutro_logo.png`
 
-![Astro theme cactus logo](logo.png)
+![Astro theme cactus logo](nutro_logo.png)
 
 ## Links
 
