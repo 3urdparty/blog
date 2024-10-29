@@ -11,14 +11,12 @@
             "id": "5172fd26080b7952",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "post/setting-up-klipper-on-pi-zero-2w-via-uart/index.md",
-                "mode": "source",
-                "source": false
+                "file": "project/toodaloo/toodaloo_logo.png"
               },
-              "icon": "lucide-file",
-              "title": "index"
+              "icon": "lucide-image",
+              "title": "toodaloo_logo"
             }
           }
         ]
@@ -158,11 +156,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5172fd26080b7952",
+  "active": "2cdc26713aac8da4",
   "lastOpenFiles": [
+    "project/nutro/nutro_logo.png",
+    "project/slam-hexapod/slam_hexapod_logo.png",
+    "project/inventoor/index.md",
+    "project/inventoor/inventoor_logo.png",
+    "post/setting-up-klipper-on-pi-zero-2w-via-uart/index.md",
     "post/klipper-configurations/index.md",
     "Advanced.md",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/index.md",
     "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_21.png",
     "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_20.png",
     "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_19.png",
@@ -171,15 +173,12 @@
     "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_17.png",
     "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_16.png",
     "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_15.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_14.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_13.png",
     "project/slam-hexapod/index.md",
     "project/toodaloo/index.md",
     "post/klipper-configurations",
     "post/setting-up-klipper-on-pi-zero-2w-via-uart",
     "post/Untitled.md",
     "project/slam-hexapod/index.md.md",
-    "project/inventoor/index.md",
     "project/slam-hexapod",
     "project/slam-hexapod"
   ]

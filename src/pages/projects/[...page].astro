@@ -8,13 +8,13 @@ import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
 import ProjectPreview from '@/components/projects/ProjectPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
-import { getAllProjects, getUniqueTags, sortMDByDate } from '@/utils'
+import { getAllProjects, getUniqueProjectTags, sortProjectMDByDate } from '@/utils'
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const allprojects = await getAllProjects()
-	const allprojectsByDate = sortMDByDate(allprojects)
-	const uniqueTags = getUniqueTags(allprojects)
-	return paginate(allprojectsByDate, { pageSize: 10, props: { uniqueTags } })
+	const allProjects = await getAllProjects()
+	const allProjectsByDate = sortProjectMDByDate(allProjects)
+	const uniqueTags = getUniqueProjectTags(allProjects)
+	return paginate(allProjectsByDate, { pageSize: 10, props: { uniqueTags } })
 }) satisfies GetStaticPaths
 
 interface Props {

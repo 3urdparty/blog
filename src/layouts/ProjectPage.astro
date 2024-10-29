@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 
-import projectHero from '@/components/projects/Hero.astro'
+import ProjectHero from '@/components/projects/Hero.astro'
 import TOC from '@/components/projects/TOC.astro'
 import Button from '@/components/Button.astro'
 
@@ -24,7 +24,7 @@ const { headings } = await project.render()
 
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
 	<div class='w-full'>
-    <Button title='Back' href=`${import.meta.env.BASE_URL}/projects` style='button'>
+		<Button title='Back' href=`${import.meta.env.BASE_URL}/projects` style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -42,7 +42,7 @@ const { headings } = await project.render()
 		<div class='mt-8 gap-x-10 lg:flex lg:items-start'>
 			{!!headings.length && <TOC headings={headings} />}
 			<article class='flex-grow break-words' data-pagefind-body>
-				<div id='project-hero'><projectHero content={project} /></div>
+				<div id='project-hero'><ProjectHero content={project}></ProjectHero></div>
 				<div
 					class='prose prose-base prose-zinc mt-12 text-muted-foreground dark:prose-invert prose-headings:font-medium prose-headings:text-foreground prose-headings:before:absolute prose-headings:before:-ms-4 prose-th:before:content-none'
 				>

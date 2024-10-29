@@ -11,16 +11,18 @@ tags:
   - AI
   - ComputerVision
 coverImage:
-  src: ./logo.png
+  src: ./slam_hexapod_logo.png
   alt: Inventoor Logo
 iconImage:
-  src: ./logo.png
+  src: ./slam_hexapod_logo.png
   alt: Inventoor Logo
 draft: true
 ---
 
 # Overview
+
 # Todos
+
 - [ ] Print Wire holders
 - [ ] Attach Latex Cutlets to Legs for grip
 - [ ] Post linkedin post about my blog and post

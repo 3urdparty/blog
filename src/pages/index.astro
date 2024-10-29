@@ -2,208 +2,149 @@
 import PageLayout from '../layouts/BaseLayout.astro'
 import Section from '../components/Section.astro'
 import Card from '../components/Card.astro'
-import ProjectCard from '../components/ProjectCard.astro'
+import ProjectCard from '../components/projects/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 
-import {getAllProjects} from '@/utils'
+import { getAllProjects } from '@/utils'
 import { Image } from 'astro:assets'
 import profileImage from '../assets/profile-image.png'
 
-import { getAllPosts, sortMDByDate } from '@/utils'
+import { getAllPosts, sortProjectMDByDate, sortMDByDate } from '@/utils'
 
-const languages = ['C/C++', 'Python', 'Swift','Javascript','Typescript','PHP', 'Ino',]
+const languages = ['C/C++', 'Python', 'Swift', 'Javascript', 'Typescript', 'PHP', 'Ino']
 const frontend = ['Vue.js', 'Astro.js']
 const backend = ['Nest.js', 'Node.js', 'Laravel', 'Django']
 const others = ['ESP-IDF', 'Arduino']
 const experience = [
-{
-name:"Pogo Labs",
-role: "Co-founder, IoT & Software Lead",
-dates:'Jul 2023 - Present',
-imagePath:"/src/assets/pogo_labs_logo.png",
-altText:'Lorem, ipsum dolor sit',
-points:[
-"Co-founded boutique software agency specializing in IoT integration and hardware-software interfaces",
-"Lead development of custom IoT solutions focusing on seamless integration between sensors and software systems",
-"Architected multiple sensor-driven applications for small-scale enterprises using cloud-first approach",
-"Established technical direction prioritizing robust software architecture with hardware extensibility",
-"Positioned company for expansion into robotics and automated systems for manufacturing clients",
-"Successfully delivered multiple end-to-end solutions combining embedded systems with web applications",
-]
-},
-{
-name:"Yakhidma",
-role: "Lead iOS Developer",
-dates:'Jul 2023 - Present',
-imagePath:"/src/assets/yakhidma_logo.jpg",
-altText:'Lorem, ipsum dolor sit',
-points:[
-"Designed and implemented scalable mobile applications using SwiftUI",
-"Led collaboration with Android developers to ensure consistent user experience",
-"Created web apps and PWAs for lightweight platform alternatives",
-"Conducted software engineering tasks including requirement gathering",
-"Led architecture design using Visual Paradigm and project planning",
-]
-},
-{
-name:"IT Society",
-role: "Assistant head of Skills development",
-dates:'Jul 2023 - Present',
-imagePath:"/src/assets/it_society_logo.png",
-altText:'Lorem, ipsum dolor sit',
-points:[
-"Led technical workshops and training sessions for 200+ student members focusing on emerging technologies",
-"Organized weekly coding challenges and hackathons to foster practical programming skills",
-"Developed comprehensive learning tracks in web development, cybersecurity, and cloud computing",
-"Collaborated with industry professionals to create relevant curriculum and mentorship opportunities",
-"Managed team of 5 instructors to deliver consistent, high-quality technical education",
-"Increased workshop participation by 40% through targeted content and engagement strategies",
-]
-},
-{
-name:"M&S",
-role: "Warehouse Employee",
-dates:'Jul 2023 - Present',
-imagePath:"/src/assets/marks_and_spencer_logo.png",
-altText:'Lorem, ipsum dolor sit',
-points:[
-"Executed efficient warehouse operations during peak retail seasons",
-"Managed inventory processing, stock organization, and order fulfillment",
-"Collaborated in fast-paced team environment to meet daily dispatch targets",
-"Maintained accurate stock records and assisted in inventory management",
-"Operated warehouse equipment following safety protocols and procedures",
-"Supported cross-functional teams during high-volume seasonal periods",
-]
-},
-{
-name:"Hackerspace",
-role: "Member",
-dates:'Jul 2023 - Present',
-imagePath:"/src/assets/hackerspace_logo.png",
-altText:'Lorem, ipsum dolor sit',
-points:[
-]
-}
+	{
+		name: 'Pogo Labs',
+		role: 'Co-founder, IoT & Software Lead',
+		dates: 'Jul 2023 - Present',
+		imagePath: '/src/assets/pogo_labs_logo.png',
+		altText: 'Lorem, ipsum dolor sit',
+		points: [
+			'Co-founded boutique software agency specializing in IoT integration and hardware-software interfaces',
+			'Lead development of custom IoT solutions focusing on seamless integration between sensors and software systems',
+			'Architected multiple sensor-driven applications for small-scale enterprises using cloud-first approach',
+			'Established technical direction prioritizing robust software architecture with hardware extensibility',
+			'Positioned company for expansion into robotics and automated systems for manufacturing clients',
+			'Successfully delivered multiple end-to-end solutions combining embedded systems with web applications'
+		]
+	},
+	{
+		name: 'Yakhidma',
+		role: 'Lead iOS Developer',
+		dates: 'Jul 2023 - Present',
+		imagePath: '/src/assets/yakhidma_logo.jpg',
+		altText: 'Lorem, ipsum dolor sit',
+		points: [
+			'Designed and implemented scalable mobile applications using SwiftUI',
+			'Led collaboration with Android developers to ensure consistent user experience',
+			'Created web apps and PWAs for lightweight platform alternatives',
+			'Conducted software engineering tasks including requirement gathering',
+			'Led architecture design using Visual Paradigm and project planning'
+		]
+	},
+	{
+		name: 'IT Society',
+		role: 'Assistant head of Skills development',
+		dates: 'Jul 2023 - Present',
+		imagePath: '/src/assets/it_society_logo.png',
+		altText: 'Lorem, ipsum dolor sit',
+		points: [
+			'Led technical workshops and training sessions for 200+ student members focusing on emerging technologies',
+			'Organized weekly coding challenges and hackathons to foster practical programming skills',
+			'Developed comprehensive learning tracks in web development, cybersecurity, and cloud computing',
+			'Collaborated with industry professionals to create relevant curriculum and mentorship opportunities',
+			'Managed team of 5 instructors to deliver consistent, high-quality technical education',
+			'Increased workshop participation by 40% through targeted content and engagement strategies'
+		]
+	},
+	{
+		name: 'M&S',
+		role: 'Warehouse Employee',
+		dates: 'Jul 2023 - Present',
+		imagePath: '/src/assets/marks_and_spencer_logo.png',
+		altText: 'Lorem, ipsum dolor sit',
+		points: [
+			'Executed efficient warehouse operations during peak retail seasons',
+			'Managed inventory processing, stock organization, and order fulfillment',
+			'Collaborated in fast-paced team environment to meet daily dispatch targets',
+			'Maintained accurate stock records and assisted in inventory management',
+			'Operated warehouse equipment following safety protocols and procedures',
+			'Supported cross-functional teams during high-volume seasonal periods'
+		]
+	},
+	{
+		name: 'Hackerspace',
+		role: 'Member',
+		dates: 'Jul 2023 - Present',
+		imagePath: '/src/assets/hackerspace_logo.png',
+		altText: 'Lorem, ipsum dolor sit',
+		points: []
+	}
 ]
 
 const education = [
-{
-name:"MMU",
-role: "Bachelor's with Honours",
-dates:'Mar 2022 - Present',
-imagePath:"/src/assets/mmu_logo.png",
-altText:'Lorem, ipsum dolor sit',
-points:[
-]
-},
+	{
+		name: 'MMU',
+		role: "Bachelor's with Honours",
+		dates: 'Mar 2022 - Present',
+		imagePath: '/src/assets/mmu_logo.png',
+		altText: 'Lorem, ipsum dolor sit',
+		points: []
+	},
 
-{
-name:"Littleover Community School",
-role: "A-levels",
-dates:'Mar 2022 - Present',
-imagePath:"/src/assets/lcs_logo.png",
-altText:'Lorem, ipsum dolor sit',
-points:[
-]
-},
+	{
+		name: 'Littleover Community School',
+		role: 'A-levels',
+		dates: 'Mar 2022 - Present',
+		imagePath: '/src/assets/lcs_logo.png',
+		altText: 'Lorem, ipsum dolor sit',
+		points: []
+	},
 
-{
-name:"Littleover Community School",
-role: "GCSEs (O-levels)",
-dates:'Mar 2022 - Present',
-imagePath:"/src/assets/lcs_logo.png",
-altText:'Lorem, ipsum dolor sit',
-points:[
-]
-},
+	{
+		name: 'Littleover Community School',
+		role: 'GCSEs (O-levels)',
+		dates: 'Mar 2022 - Present',
+		imagePath: '/src/assets/lcs_logo.png',
+		altText: 'Lorem, ipsum dolor sit',
+		points: []
+	}
 ]
 
-const projects = [
-{
-href:`${import.meta.env.BASE_URL}/projects/nutro`,
-title:"Nutro",
-subheading:"IoT empowered Macro tracker",
-imagePath:"/src/assets/nutro_logo.png",
-iconPath:"/src/assets/nutro_logo.png",
-imageAltText:"",
-imageClass:'bg-red-400',
-},
-
-{
-href:`${import.meta.env.BASE_URL}/projects/clock-in`,
-title:"Clock-In",
-subheading:"IoT empowered Macro tracker",
-imagePath:"/src/assets/clock_in_logo.png",
-iconPath:"/src/assets/clock_in_logo.png",
-imageAltText:"",
-},
-
-{
-href:`${import.meta.env.BASE_URL}/projects/toodaloo`,
-title:"Toodaloo",
-subheading:"IoT empowered Macro tracker",
-imagePath:"/src/assets/toodaloo_logo.png",
-iconPath:"/src/assets/toodaloo_logo.png",
-imageAltText:"",
-},
-
-//{
-//href:"#",
-//title:"SLAM Hexapod",
-//subheading:"IoT empowered Macro tracker",
-//imagePath:"/src/assets/lcs_logo.png",
-//iconPath:"/src/assets/lcs_logo.png",
-//imageAltText:"",
-//},
-//
-//{
-//href:"#",
-//title:"Mementoor",
-//subheading:"IoT empowered Macro tracker",
-//imagePath:"/src/assets/lcs_logo.png",
-//iconPath:"/src/assets/lcs_logo.png",
-//imageAltText:"",
-//},
+const certifications = [
+	{
+		name: 'SANS Foundation',
+		role: 'Test',
+		dates: 'Test',
+		imagePath: '/src/assets/lcs_logo.png',
+		altText: 'Test',
+		points: []
+	}
 ]
-
-const certifications = [{
-name:"SANS Foundation",
-role:"Test",
-dates:"Test",
-imagePath:"/src/assets/lcs_logo.png",
-altText:"Test",
-points:[]
-}]
-
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 const allProjects = await getAllProjects()
-const allProjectsByDate = sortMDByDate(allProjects).slice(0, MAX_POSTS)
+const allProjectsByDate = sortProjectMDByDate(allProjects).slice(0, MAX_POSTS)
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
-	<div class='flex w-full flex-col gap-y-10 '>
+	<div class='flex w-full flex-col gap-y-10'>
 		<section class='flex flex-col items-center gap-y-2'>
-			<Image
-				src={profileImage}
-				alt='profile photo'
-				class='h-80 w-auto'
-				loading='eager'
-			/>
+			<Image src={profileImage} alt='profile photo' class='h-80 w-auto' loading='eager' />
 
 			<div class='flex flex-col items-center gap-y-4'>
-        <h1 class='text-4xl font-bold font-jersey'>Hey, I'm
-        <span class="text-orange-300">
-Mustafa Yousif
-        </span>
-
-
-          </h1>
+				<h1 class='font-jersey text-4xl font-bold'>
+					Hey, I'm
+					<span class='text-orange-300'> Mustafa Yousif </span>
+				</h1>
 				<a
 					href='https://github.com/srleom/astro-theme-resume.git'
 					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
@@ -226,7 +167,7 @@ Mustafa Yousif
 							></path></svg
 						>
 					</Label>
-              <Label title='Cyberjaya, Malaysia'>
+					<Label title='Cyberjaya, Malaysia'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -256,37 +197,30 @@ Mustafa Yousif
 		</section>
 
 		<Section title='About'>
-      <p class='text-muted-foreground'>Passionate about integrating <span class="text-orange-400">AI</span> into <span class="text-orange-400">Robotics</span> and exploring innovative applications of <span class="text-orange-400">Computer Vision</span>  for everyday challenges. Experienced in developing scalable <span class="text-orange-400">IoT</span> systems across diverse domains. My expertise lies in bridging the gap between hardware and software in robotic systems, with a focus on implementing intelligent algorithms for enhanced functionality and autonomy.
+			<p class='text-muted-foreground'>
+				Passionate about integrating <span class='text-orange-400'>AI</span> into <span
+					class='text-orange-400'>Robotics</span
+				> and exploring innovative applications of <span class='text-orange-400'
+					>Computer Vision</span
+				> for everyday challenges. Experienced in developing scalable <span class='text-orange-400'
+					>IoT</span
+				> systems across diverse domains. My expertise lies in bridging the gap between hardware and
+				software in robotic systems, with a focus on implementing intelligent algorithms for enhanced
+				functionality and autonomy.
+			</p>
 
-
-</p>
-
-      <h1>
-
-Current research interests:
-      </h1>
-      <ul class="list-disc text-muted-foreground">
-        <li>
-AI-powered robotic systems
-        </li>
-<li>
-Real-world applications of computer vision
-        </li>
-        <li>
-          
-Edge computing for IoT devices
-          </li>
-          <li>
-SLAM (Simultaneous Localization and Mapping) techniques
-            </li>
-            <li>
-
-Collaborative multi-agent robotic systems
-            </li>
-      </ul>
-      <p class="text-muted-foreground">
-Constantly seeking new opportunities to push the boundaries of robotics and AI integration. Open to collaboration and always eager to discuss cutting-edge developments in the field.
-      </p>
+			<h1>Current research interests:</h1>
+			<ul class='list-disc text-muted-foreground'>
+				<li>AI-powered robotic systems</li>
+				<li>Real-world applications of computer vision</li>
+				<li>Edge computing for IoT devices</li>
+				<li>SLAM (Simultaneous Localization and Mapping) techniques</li>
+				<li>Collaborative multi-agent robotic systems</li>
+			</ul>
+			<p class='text-muted-foreground'>
+				Constantly seeking new opportunities to push the boundaries of robotics and AI integration.
+				Open to collaboration and always eager to discuss cutting-edge developments in the field.
+			</p>
 		</Section>
 		{
 			allPostsByDate.length > 0 && (
@@ -303,109 +237,90 @@ Constantly seeking new opportunities to push the boundaries of robotics and AI i
 		}
 
 		<Section title='Experience'>
- {
-        experience.map((experience) => (
-            <>
-<Card
-heading={experience.name}
-subheading={experience.role}
-date={experience.dates}
-imagePath={experience.imagePath}
-altText={experience.altText}
-				imageClass='h-12 w-auto md:-left-16'
-			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-          {
-
-        experience.points.map((point) => (
-<li>{point}</li>
-            ))
-          }
-      
-				</ul>
-			</Card>
-            </>
-        ))
-    }
-			
-
+			{
+				experience.map((experience) => (
+					<>
+						<Card
+							heading={experience.name}
+							subheading={experience.role}
+							date={experience.dates}
+							imagePath={experience.imagePath}
+							altText={experience.altText}
+							imageClass='h-12 w-auto md:-left-16'
+						>
+							<ul class='ml-4 list-disc text-muted-foreground'>
+								{experience.points.map((point) => (
+									<li>{point}</li>
+								))}
+							</ul>
+						</Card>
+					</>
+				))
+			}
 		</Section>
-<Section title='Education'>
- {
-        education.map((experience) => (
-            <>
-<Card
-heading={experience.name}
-subheading={experience.role}
-date={experience.dates}
-imagePath={experience.imagePath}
-altText={experience.altText}
-				imageClass='h-12 w-auto md:-left-16'
-			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-          {
-
-        experience.points.map((point) => (
-<li>{point}</li>
-            ))
-          }
-      
-				</ul>
-			</Card>
-            </>
-        ))
-    }
-			
-
+		<Section title='Education'>
+			{
+				education.map((experience) => (
+					<>
+						<Card
+							heading={experience.name}
+							subheading={experience.role}
+							date={experience.dates}
+							imagePath={experience.imagePath}
+							altText={experience.altText}
+							imageClass='h-12 w-auto md:-left-16'
+						>
+							<ul class='ml-4 list-disc text-muted-foreground'>
+								{experience.points.map((point) => (
+									<li>{point}</li>
+								))}
+							</ul>
+						</Card>
+					</>
+				))
+			}
 		</Section>
-		
 
 		<Section title='Projects'>
-      <div class="relative">
-<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0 sm:overflow-x-scroll pb-8 relative '>
-{
-        allProjectsByDate.map((project) => (
-				<ProjectCard
-        style="width:200px"
-        project={project}
-				/>
-
-        ))
-    }
-      </div>
-    <div class="w-10 z-20 h-full right-0 top-0 absolute bg-gradient-to-r to-background from-transparent"/>
-      </div>
-			
+			<div class='relative'>
+				<div
+					class='relative flex flex-col gap-y-3 pb-8 sm:flex-row sm:gap-x-3 sm:gap-y-0 sm:overflow-x-scroll'
+				>
+					{
+						allProjectsByDate.map((project) => (
+							<ProjectCard style='width:200px' project={project} />
+						))
+					}
+				</div>
+				<div
+					class='absolute right-0 top-0 z-20 h-full w-10 bg-gradient-to-r from-transparent to-background'
+				>
+				</div>
+			</div>
 		</Section>
 
-<!--		<Section title='Certifications'>-->
-<!-- {-->
-<!--        certifications.map((certification) => (-->
-<!--            <>-->
-<!--<Card-->
-<!--heading={certification.name}-->
-<!--subheading={certification.role}-->
-<!--date={certification.dates}-->
-<!--imagePath={certification.imagePath}-->
-<!--altText={certification.altText}-->
-<!--				imageClass='h-12 w-auto md:-left-16'-->
-<!--			>-->
-<!--				<ul class='ml-4 list-disc text-muted-foreground'>-->
-<!--          {-->
-<!---->
-<!--        certification.points.map((point) => (-->
-<!--<li>{point}</li>-->
-<!--            ))-->
-<!--          }-->
-<!---->
-<!--				</ul>-->
-<!--			</Card>-->
-<!--            </>-->
-<!--        ))-->
-<!--    }-->
-<!---->
-<!---->
-<!--		</Section>-->
+		<Section title='Certifications'>
+			{
+				certifications.map((certification) => (
+					<>
+						<Card
+							heading={certification.name}
+							subheading={certification.role}
+							date={certification.dates}
+							imagePath={certification.imagePath}
+							altText={certification.altText}
+							imageClass='h-12 w-auto md:-left-16'
+						>
+							<ul class='ml-4 list-disc text-muted-foreground'>
+								{certification.points.map((point) => (
+									<li>{point}</li>
+								))}
+							</ul>
+						</Card>
+					</>
+				))
+			}
+		</Section>
 
 		<Section title='Skills'>
 			<SkillLayout title='Languages' skills={languages} />

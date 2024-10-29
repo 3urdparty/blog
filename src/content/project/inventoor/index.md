@@ -8,16 +8,16 @@ tags:
   - test
   - markdown
 coverImage:
-  src: ./logo.png
+  src: ./inventoor_logo.png
   alt: Inventoor Logo
 iconImage:
-  src: ./logo.png
+  src: ./inventoor_logo.png
   alt: Inventoor Logo
 draft: false
 ---
 
 Test
-![Astro theme cactus logo](project/inventoor/logo.png)
+![Astro theme cactus logo](inventoor_logo.png)
 
 ## Links
 

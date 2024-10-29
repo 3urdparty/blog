@@ -1,16 +1,16 @@
 ---
-title: "Nutro"
-subtitle: "IoT Empowered Macro-Nutrient Tracker"
-description: "A Vue.js app that tracks macro intake enabled with a computer vision model that scans your fridge"
-publishDate: "22 Feb 2023"
+title: 'Nutro'
+subtitle: 'IoT Empowered Macro-Nutrient Tracker'
+description: 'A Vue.js app that tracks macro intake enabled with a computer vision model that scans your fridge'
+publishDate: '22 Feb 2023'
 updatedDate: 22 Jan 2024
-tags: ["test", "markdown"]
+tags: ['test', 'markdown']
 coverImage:
-  src: "./logo.png"
-  alt: "Nutro Logo"
+  src: './nutro_logo.png'
+  alt: 'Nutro Logo'
 iconImage:
-  src: "./logo.png"
-  alt: "Nutro Logo"
+  src: './nutro_logo.png'
+  alt: 'Nutro Logo'
 ---
 
 ## This is a H2 Heading
@@ -56,6 +56,7 @@ An example containing a clickable reference[^1] with a link to the source.
 Second example containing a reference[^2] with a link to the source.
 
 [^1]: Reference first footnote with a return to content link.
+
 [^2]: Second reference with a link.
 
 If you check out this example in `src/content/post/markdown-elements/index.md`, you'll notice that the references and the heading "Footnotes" are added to the bottom of the page via the [remark-rehype](https://github.com/remarkjs/remark-rehype#options) plugin.
@@ -107,10 +108,10 @@ Syntax highlighting
 
 ```js
 var foo = function (bar) {
-	return bar++;
-};
+	return bar++
+}
 
-console.log(foo(5));
+console.log(foo(5))
 ```
 
 ### Expressive code examples
@@ -118,7 +119,7 @@ console.log(foo(5));
 Adding a title
 
 ```js title="file.js"
-console.log("Title example");
+console.log('Title example')
 ```
 
 A bash terminal
@@ -131,11 +132,11 @@ Highlighting code lines
 
 ```js title="line-markers.js" del={2} ins={3-4} {6}
 function demo() {
-	console.log("this line is marked as deleted");
+	console.log('this line is marked as deleted')
 	// This line and the next one are marked as inserted
-	console.log("this is the second inserted line");
+	console.log('this is the second inserted line')
 
-	return "this line uses the neutral default marker type";
+	return 'this line uses the neutral default marker type'
 }
 ```
 
@@ -159,9 +160,8 @@ Right aligned columns
 
 ## Images
 
-Image in the same folder: `src/content/post/markdown-elements/logo.png`
 
-![Astro theme cactus logo](project/nutro/logo.png)
+![Astro theme cactus logo](./nutro_logo.png)
 
 ## Links
 

@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets'
 ---
 
 <header class='mb-12 flex w-full flex-wrap pb-3 text-sm sm:flex-nowrap sm:justify-start'>
@@ -7,27 +6,28 @@ import { Image } from 'astro:assets'
 		class='relative mx-auto flex w-full items-center justify-between sm:flex sm:items-center'
 		aria-label='global'
 	>
-  <a class='flex-none text-4xl text-orange-300 font-vermin font-semibold relative' 
-    href=`${import.meta.env.BASE_URL}`
- aria-label='Brand'>3urdparty</a>
+		<a
+			class='relative flex-none font-vermin text-4xl font-semibold text-orange-300'
+			href=`${import.meta.env.BASE_URL}`
+			aria-label='Brand'>3urdparty</a
+		>
 
 		<div class='flex flex-row items-center justify-center gap-x-5 sm:gap-x-7'>
-<a
-    href=`${import.meta.env.BASE_URL}/projects`
-				class='flex-none text-[8px] font-pixeled  font-medium hover:text-foreground/75'
+			<a
+				href=`${import.meta.env.BASE_URL}/projects`
+				class='flex-none font-pixeled text-[8px] font-medium hover:text-foreground/75'
 				aria-label='Nav Menu Item'
 				>projects
-        
 			</a>
-<a
-    href=`${import.meta.env.BASE_URL}/blog`
-				class='flex-none text-[8px] font-pixeled font-medium hover:text-foreground/75'
+			<a
+				href=`${import.meta.env.BASE_URL}/blog`
+				class='flex-none font-pixeled text-[8px] font-medium hover:text-foreground/75'
 				aria-label='Nav Menu Item'
 				>blog
 			</a>
-<a
-    href=`${import.meta.env.BASE_URL}/tools`
-				class='flex-none  text-[8px] font-pixeled font-medium hover:text-foreground/75'
+			<a
+				href=`${import.meta.env.BASE_URL}/tools`
+				class='flex-none font-pixeled text-[8px] font-medium hover:text-foreground/75'
 				aria-label='Nav Menu Item'
 				>tools
 			</a>
