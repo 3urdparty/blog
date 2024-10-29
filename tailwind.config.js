@@ -63,6 +63,7 @@ const config = {
         satoshi: ['Satoshi', 'sans'],
         vermin: ['Vermin'],
         jersey: ['jersey'],
+        pixeled: ['Pixeled'],
       }
     }
   }

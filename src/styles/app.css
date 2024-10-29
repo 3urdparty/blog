@@ -33,6 +33,14 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: 'Pixeled';
+	src: url('/blog/fonts/Pixeled.ttf');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 @layer base {
 	:root {
 		--background: 210 33% 99%;
@@ -57,14 +65,14 @@
 		--radius: 0.5rem;
 	}
 	.dark {
-		--background: 214 52% 12%;
+		--background: 213 52% 17%;
 		--foreground: 0 0% 98%;
 		--card: 240 10% 3.9%;
 		--card-foreground: 0 0% 98%;
 		--popover: 240 10% 3.9%;
 		--popover-foreground: 0 0% 98%;
 		--primary: 0 0% 98%;
-		--primary-foreground: 224 49% 9%;
+		--primary-foreground: 213 49% 12%;
 		--secondary: 240 3.7% 15.9%;
 		--secondary-foreground: 0 0% 98%;
 		--muted: 240 3.7% 15.9%;
