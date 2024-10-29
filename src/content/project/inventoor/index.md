@@ -17,7 +17,7 @@ draft: false
 ---
 
 Test
-![Astro theme cactus logo](logo.png)
+![Astro theme cactus logo](project/inventoor/logo.png)
 
 ## Links
 

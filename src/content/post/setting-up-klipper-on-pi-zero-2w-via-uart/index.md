@@ -1,10 +1,21 @@
 ---
-title: A working draft title
-description: This post is for testing the draft post functionality
-publishDate: 10 Sept 2023
+title: Setting up Klipper on Ender 3 v3 SE with RPi Zero 2W via UART
+description: This is a short guide on setting up Klipper and Mainsail on a Raspberry Pi Zero 2W and connecting it to an Ender 3v3SE via UART
+publishDate: 29 October 2024
 tags:
-  - test
+  - 3D-printing
+  - Ender3v3
+  - Ender3v3SE
+  - Creality
+  - Ender
+  - Klipper
+  - Mainsail
+  - Raspberry-Pi
 draft: false
+subtitle: 
+coverImage:
+    src: "./cover.png"
+    alt: "./Klipper on Ender 3v3SE"
 ---
 
 
@@ -23,8 +34,9 @@ Klipper is a firmware that gives you more control over your printer, making it e
 ## Why Pi Zero 2W
 Of all the SBCs available in the pi range of SBCs, the Pi Zero 2W is the perfect form factor to fit inside the 3D printer, though we won't present that here. It provides just enough resources such that it can power klipper+Mainsail as well as a webcam running on low frame rate and resolution, whilst also maintaining low temperatures (so you don't have to worry about cooling)
 
->[!WARNING] Note:
->The Pi Zero 2W is different from the the Pi Zero, and according to the docs its not recommended to use the Pi Zero 2W since it might barely have enough compute to run klipper and mainsail.
+
+> [!WARNING]
+> The Pi Zero 2W is different from the the Pi Zero, and according to the docs its not recommended to use the Pi Zero 2W since it might barely have enough compute to run klipper and mainsail.
 
 # Checklist
 You will need
@@ -40,20 +52,23 @@ You will need
 
 # Installation
 ## Raspberry Pi Setup
+
 We will have to flash MainsailOS to the RPI Zero 2W.
 1. Download and Install the Raspberry Pi Imager at this [link](https://www.raspberrypi.com/software/)
 2. Choose your device (In this case, it will be the RPI Zero 2W)
-![[rpi_imager_step_1.png]]
-![[Pasted image 20241029141247.png]]
-![[Pasted image 20241029141308.png]]
-![[Pasted image 20241029141321.png]]
-![[Pasted image 20241029141335.png]]
-![[Pasted image 20241029141343.png]]
+
+![](rpi_imager_step_1.png)
+
+![](rpi_imager_step_2.png)
+![](rpi_imager_step_3.png)
+![](rpi_imager_step_4.png)
+![](rpi_imager_step_5.png)
+![](rpi_imager_step_6.png)
 1. Find and select `Mainsail OS`, the 64-bit version if available
 2. Choose your storage device (the microSD which you will install in your Raspberry Pi)
-![[Pasted image 20241029141540.png]]
+![](rpi_imager_step_7.png)
 1. Click on next, and select "Edit Settings" to enable SSH and connect to your local Wifi Network at startup
-![[Pasted image 20241029141555.png]]
+![](rpi_imager_step_8.png)
 You will see this window. Here's an explanation of the following settings:
 - `hostname`: the host name at which the Raspberry Pi will be reachable over HTTP.
 - `username`: the username of the main user of the pi
@@ -62,8 +77,8 @@ You will see this window. Here's an explanation of the following settings:
 - `SSID`: Password for your Wifi network
 Make sure toggle "Enable SSH" in the "Services" tab and select "Use Password Authentication"
 You can then press save and continue to flash by selecting Yes
-![[Pasted image 20241029141647.png]]
-![[Pasted image 20241029141913.png]]
+![](rpi_imager_step_9.png)
+![](rpi_imager_step_10.png)
 1. After the flashing is complete, eject the SD card and plug into Rpi
 2. Connect the power supply
 3. SSH into your Raspberry Pi using your previously set username and password:
@@ -74,7 +89,7 @@ ssh ender3v3se.local
 
 You will be prompted for your password. After successfully typing it in your should see this prompt:
 
-![[Pasted image 20241029142236.png]]
+![](rpi_imager_step_13.png)
 # Building Klipper
 Now, we will have to build the klipper firmware for out printer. Begin by navigating to the klipper directory from the home directory and enter `make menuconfig`:
 ```bash
@@ -83,9 +98,9 @@ cd klipper/
 make menuconfig
 ```
 You will get a menu screen, only you will have different settings to mine. Change those settings so that they are like this:
-![[Pasted image 20241029142722.png]]
+![](rpi_imager_step_14.png)
 Then press `Q` and run `make`. It should start building the project:
-![[Pasted image 20241029142854.png]]
+![](rpi_imager_step_15.png)
 
 >[!Info] Info:
  `make menuconfig` is a command that belongs to `CMAKE`, which is responsible for building `C/C++` projects
@@ -97,10 +112,10 @@ mv ~/klipper/out/klipper.bin ~/printer_data/config/
 ```
 
 Now if you navigate to the hostname (followed by `.local`) you set in the Rpi flashing step in your internet browser (in my case it's `ender3v3se.local`), you should see the Mainsail dashboard. You will have errors there, which is to be expected. Navigate to the machine page via the sidebar:
-![[Pasted image 20241029143414.png|300]]
+![](rpi_imager_step_16.png)
 
 Once that is done, you will see the same `klipper.bin` file we just moved over here:
-![[Pasted image 20241029143541.png]]
+![](rpi_imager_step_17.png)
 Download the file into your local computer.
 
 ## Preparing the SD card for flashing
@@ -110,11 +125,11 @@ Now there is a lot of weird steps that you have to take to ensure that the print
 We have to format the SD using FAT32. Follow the appropriate guides online if you are a windows user, but I will be using Mac and explaining some intricacies that you windows users might not have.
 
 Navigate to the `Disk Utility` app and open your chosen SD card, and then press the "Erase" button:
-![[Pasted image 20241029143906.png]]
+![](rpi_imager_step_18.png)
 You will see this menu. Name it whatever you would like, but make sure that you select `MS-DOS (FAT32)`  or `MS-DOS` if that's the only option available to you
-![[Pasted image 20241029143950.png]]
+![](rpi_imager_step_.png)
 After that is done:
-![[Pasted image 20241029144118.png]]
+![](rpi_imager_step_19.png)
 We will have to do some further cleaning if you are using a MacOS:
 1. Open a terminal and navigate to `/Volumes/YOUR_SD_CARD_NAME` in my case i will run:
 ```bash
@@ -139,7 +154,9 @@ Now you can eject the SD card and insert it into your printer.
 
 # Further Steps
 I will post blog posts in the future as to further configurations to get the most out of your 3D printer:
-[[Klipper Configuration]]
-[[Advanced Klipper Configuration]]
-[[Setting up Webcam on Pi Zero 2W]]
-[[Setting up Obico]]
+
+
+[Klipper Configuration](Klipper Configuration)
+[Advanced Klipper Configuration](Advanced Klipper Configuration)
+[Setting up Webcam on Pi Zero 2W](Setting up Webcam on Pi Zero 2W)
+[Setting up Obico](Setting up Obico)

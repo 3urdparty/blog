@@ -10,6 +10,8 @@ import { expressiveCodeOptions } from './src/site.config'
 import icon from 'astro-icon'
 
 
+import { remarkAlert } from "remark-github-blockquote-alert";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://3urdparty.github.io',
@@ -24,7 +26,7 @@ export default defineConfig({
     icon()
   ],
   markdown: {
-    remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+    remarkPlugins: [remarkUnwrapImages, remarkReadingTime, remarkAlert],
     rehypePlugins: [
       [
         rehypeExternalLinks,

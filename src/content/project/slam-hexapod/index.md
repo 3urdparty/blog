@@ -21,7 +21,11 @@ draft: true
 
 # Overview
 # Todos
+- [ ] Print Wire holders
+- [ ] Attach Latex Cutlets to Legs for grip
+- [ ] Post linkedin post about my blog and post
 - [ ] Connect Rotating Camera Mount to PCA9685
+- [ ] Reprint Top Arm
 - [ ] 3D print ESP32-CAM mount
 - [ ] Test the rotating mount
 - [ ] Make Hexapod Stand
