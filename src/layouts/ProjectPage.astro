@@ -24,7 +24,7 @@ const { headings } = await project.render()
 
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
 	<div class='w-full'>
-		<Button title='Back' href='/projects' style='button'>
+    <Button title='Back' href=`${import.meta.env.BASE_URL}/projects` style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'

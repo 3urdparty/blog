@@ -47,7 +47,7 @@ const paginationProps = {
 
 <PageLayout meta={meta}>
 	<div class='w-full'>
-		<Button title='Back' href='/' style='button'>
+    <Button title='Back' href={import.meta.env.BASE_URL} style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -101,12 +101,12 @@ const paginationProps = {
 							<ul class='text-bgColor flex flex-wrap gap-2'>
 								{uniqueTags.map((tag) => (
 									<li>
-										<Button title={tag} href={`/tags/${tag}/`} style='pill' />
+                    <Button title={tag} href={`${import.meta.env.BASE_URL}/tags/${tag}/`} style='pill' />
 									</li>
 								))}
 							</ul>
 							<span class='mt-4 block sm:text-end'>
-								<a aria-label='View all project categories' class='' href='/tags/' data-astro-prefetch>
+                <a aria-label='View all project categories' class='' href=`${import.meta.env.BASE_URL}/tags/` data-astro-prefetch>
 									View all →
 								</a>
 							</span>

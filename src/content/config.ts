@@ -38,6 +38,7 @@ const project = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string().max(60),
+      subtitle: z.string().max(60),
       description: z.string().min(50).max(160),
       publishDate: z
         .string()
@@ -53,9 +54,15 @@ const project = defineCollection({
           alt: z.string()
         })
         .optional(),
+      iconImage: z
+        .object({
+          src: image(),
+          alt: z.string()
+        })
+        .optional(),
       draft: z.boolean().default(false),
       tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
-      ogImage: z.string().optional()
+      ogImage: z.string().optional(),
     })
 })
 
