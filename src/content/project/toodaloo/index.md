@@ -12,7 +12,11 @@ iconImage:
   src: './toodaloo_logo.png'
   alt: 'Toodaloo Logo'
 ---
-
+# Todos
+- [ ] Make recurring tasks reflect the actual duration when creating the task
+- [ ] instead of saving to cache execute more efficient queries in apollo
+- [ ] Only get instances within from to range
+- [ ] remove padding in tasks
 # Project
 
 # Overview

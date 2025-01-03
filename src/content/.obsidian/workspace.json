@@ -11,15 +11,82 @@
             "id": "5172fd26080b7952",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "project/toodaloo/toodaloo_logo.png"
+                "file": "project/slam-hexapod/index.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "toodaloo_logo"
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          },
+          {
+            "id": "a10fb1d94bda52cd",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "project/slam-hexapod/Project.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "Project"
+            }
+          },
+          {
+            "id": "d7ef6e0941a812a0",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "project/slam-hexapod/Project.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "Project"
+            }
+          },
+          {
+            "id": "cd6d1cd076871895",
+            "type": "leaf",
+            "state": {
+              "type": "card-board-view",
+              "state": {},
+              "icon": "card-board",
+              "title": "CardBoard"
+            }
+          },
+          {
+            "id": "8d83f631da835fa3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "project/slam-hexapod/index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -153,28 +220,34 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-kanban:Create new board": false,
+      "card-board:CardBoard": false
     }
   },
-  "active": "2cdc26713aac8da4",
+  "active": "d7ef6e0941a812a0",
   "lastOpenFiles": [
-    "project/nutro/nutro_logo.png",
-    "project/slam-hexapod/slam_hexapod_logo.png",
-    "project/inventoor/index.md",
-    "project/inventoor/inventoor_logo.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/index.md",
-    "post/klipper-configurations/index.md",
-    "Advanced.md",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_21.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_20.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_19.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_18.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_17.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_16.png",
-    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_15.png",
+    "Untitled 1.md",
+    "project/slam-hexapod/Project.md",
     "project/slam-hexapod/index.md",
+    "project/slam-hexapod/robot.jpeg",
+    "project/slam-hexapod/Pasted image 20241122110017.png",
+    "project/slam-hexapod/slam_hexapod_logo.png",
+    "project/slam-hexapod/Pasted image 20241115220112.png",
+    "project/slam-hexapod/Pasted image 20241115220101.png",
+    "project/slam-hexapod/Pasted image 20241110093701.png",
+    "project/slam-hexapod/Pasted image 20241031092242.png",
+    "project/slam-hexapod/Pasted image 20241115174316.png",
+    "Pasted image 20241115174316.png|900.md",
+    "Untitled.md",
+    "project/slam-hexapod/Pasted image 20241109103212.png",
     "project/toodaloo/index.md",
+    "Presentation.md",
+    "post/setting-up-klipper-on-pi-zero-2w-via-uart/index.md",
+    "post/setting-up-klipper-on-pi-zero-2w-via-uart/rpi_imager_step_.png",
+    "post/klipper-configurations/index.md",
+    "project/inventoor/index.md",
+    "Advanced.md",
     "post/klipper-configurations",
     "post/setting-up-klipper-on-pi-zero-2w-via-uart",
     "post/Untitled.md",
